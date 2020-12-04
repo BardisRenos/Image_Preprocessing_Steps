@@ -34,4 +34,18 @@ Last, output the result of image processing. The result might be the image chang
   print(img)
 ```
 
+```
+[[[0 0 0]
+  [0 0 0]
+  [0 0 0]
+  ...
+  [0 0 0]
+  [0 0 0]
+  [0 0 0]]
+
+ [[0 0 0]
+  [0 0 0]
+  [0 0 0]
+```
+
 An image is nothing more than a two-dimensional array of numbers(or pixels) ranging between 0 and 255. It is defined by the mathematical function f(x,y) where x and y are the two co-ordinates horizontally and vertically.
