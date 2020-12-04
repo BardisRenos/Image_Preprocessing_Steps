@@ -6,7 +6,7 @@
 
 In this repository will demostrates the ability of **Python** programming language and the library of **OpenCV** to apply process to images. 
 
-Image processing is any form of processing for which the input is an image or a series of images or videos, such as photographs or frames of video. The output of image processing can be either an image or a set of characteristics or parameters related to the image. It also means "Analyzing and manipulating images with a computer"
+Digital image processing is the use of computer algorithms to perform image processing on digital images. As a subfield of digital signal processing, digital image processing has many advantages over analogue image processing. It allows a much wider range of algorithms to be applied to the input data — the aim of digital image processing is to improve the image data (features) by suppressing unwanted distortions and/or enhancement of some important image features so that our AI-Computer Vision models can benefit from this improved data to work on.
 
 Image processing is performed in three steps:
 
@@ -18,8 +18,20 @@ Last, output the result of image processing. The result might be the image chang
 
 ### 1. Read the image ### 
 
-Using OpenCV library can 
 
 ```python
   img = cv2.imread('/home/eAdmin/Desktop/Images/100128_d6_front.png')
 ```
+```python
+  print(img.shape)
+```
+
+```
+(958, 1276, 3)
+```
+
+```python
+  print(img)
+```
+
+An image is nothing more than a two-dimensional array of numbers(or pixels) ranging between 0 and 255. It is defined by the mathematical function f(x,y) where x and y are the two co-ordinates horizontally and vertically.
