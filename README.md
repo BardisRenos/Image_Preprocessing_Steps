@@ -5,4 +5,4 @@
 </p>
 
 
-In this repository will demostrates the ability of **Python** programming language and the library of **OpenCV**.
+In this repository will demostrates the ability of **Python** programming language and the library of **OpenCV** to apply process to images. 
