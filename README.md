@@ -70,3 +70,19 @@ After the resize of the image. The picture is 350 by 350 pixels and one channel 
 ```
 
 ### 4. Noise ####
+vnfgnfvf
+
+#### 4.1 Gaussian ####
+
+#### 4.2 Median ####
+
+### 5. Canny Edge Detection ###
+
+### 6. Segmentation & Morphology ###
+
+### 7. Image Gradients ###
+
+### 8. Contours ###
+
+### 9. Image Segmentation with Watershed Algorithm ###
+
