@@ -49,3 +49,20 @@ Last, output the result of image processing. The result might be the image chang
 ```
 
 An image is nothing more than a two-dimensional array of numbers(or pixels) ranging between 0 and 255. It is defined by the mathematical function f(x,y) where x and y are the two co-ordinates horizontally and vertically.
+
+
+### 2.Convert the color of the images ###
+Convert an image from RGB structure to grayscale format. 
+
+```python
+cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+```
+
+### 3. Image Resizing 
+An image can be resized into our dimensions
+
+```python
+img_gray = cv2.resize(img_gray, (350, 350), interpolation=cv2.INTER_AREA)   
+```
+
+
