@@ -58,11 +58,15 @@ Convert an image from RGB structure to grayscale format.
 cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 ```
 
-### 3. Image Resizing 
+### 3. Image Resizing ###
 An image can be resized into our dimensions
 
 ```python
 img_gray = cv2.resize(img_gray, (350, 350), interpolation=cv2.INTER_AREA)   
 ```
+After the resize of the image. The picture is 350 by 350 pixels and one channel only. The indication that the image if in black white format.
+```
+(350, 350)
+```
 
-
+### 4. Noise ####
