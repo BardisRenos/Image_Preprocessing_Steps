@@ -70,7 +70,21 @@ After the resize of the image. The picture is 350 by 350 pixels and one channel 
 ```
 
 ### 4. Noise ####
-vnfgnfvf
+Managing images is a frequent problem is the noise. There are different kind of imaging noise. Here, we can give an overview of three basic types of noise that are common in image processing applications:
+
+1.  Gaussian noise
+2.  Random noise
+3.  Salt and Pepper noise (Impulse noise – only white pixels)
+
+```python
+def add_noise(img):
+    from skimage.util import random_noise
+    # Adding Gaussian noise
+    noise_img = random_noise(img, mode='s&p', amount=0.3)
+    noise_img = np.array(255*noise_img, dtype='uint8')
+    show_image(noise_img)
+
+```
 
 #### 4.1 Gaussian ####
 
