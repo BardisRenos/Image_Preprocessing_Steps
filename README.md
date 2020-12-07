@@ -135,6 +135,12 @@ def bilateral(img):
 
 ### 5. Canny Edge Detection ###
 
+```python
+def canny_edge(img):
+    canny_edge = cv2.Canny(img, 100, 200)
+    show_multiple_images(img, canny_edge, "Input Image", "Edge Image")
+```
+
 ### 6. Segmentation & Morphology ###
 
 ### 7. Image Gradients ###
