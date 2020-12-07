@@ -29,6 +29,16 @@ Last, output the result of image processing. The result might be the image chang
 ```
 (958, 1276, 3)
 ```
+In order to show the image that we read. I create a method to show each image for the further developing.  
+
+```python
+def show_image(img):
+    cv2.imshow("Given Image", img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+```
+The structure of an image is an array of 2D or 3D dimension. When is color image the array is 3D and black white then 2D.
 
 ```python
   print(img)
