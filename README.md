@@ -94,6 +94,9 @@ Managing images is a frequent problem is the noise. There are different kind of 
 2.  Random noise
 3.  Salt and Pepper noise (Impulse noise – only white pixels)
 
+
+The example code adds Salt and Pepper noise.
+
 ```python
 def add_noise(img):
     from skimage.util import random_noise
@@ -101,12 +104,34 @@ def add_noise(img):
     noise_img = random_noise(img, mode='s&p', amount=0.3)
     noise_img = np.array(255*noise_img, dtype='uint8')
     show_image(noise_img)
-
 ```
 
-#### 4.1 Gaussian ####
+#### 4.1 Gaussian Filter ####
+```python
 
-#### 4.2 Median ####
+def gaussian_filter(img):
+    img = add_noise(img)
+    gaussian = cv2.GaussianBlur(img, (5, 5), 0)
+    show_multiple_images(img, gaussian, "Input Image", "Gaussian Filter")
+```
+
+#### 4.2 Median Filter ####
+
+```python
+def median_blur(img):
+    img = add_noise(img)
+    median = cv2.medianBlur(img, 5)
+    show_multiple_images(img, median, "Input Image", "Median Filter")
+```
+
+#### 4.3 Bilateral Filter ####
+
+```python
+def bilateral(img):
+    img = add_noise(img)
+    blur = cv2.bilateralFilter(img, 9, 75, 75)
+    show_multiple_images(img, blur, "Input Image", "Bilateral Filter")
+```
 
 ### 5. Canny Edge Detection ###
 
