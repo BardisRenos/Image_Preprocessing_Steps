@@ -67,6 +67,9 @@ Convert an image from RGB structure to grayscale format.
 ```python
 cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 ```
+<p align="center"> 
+<img src="https://github.com/BardisRenos/Image_Preprocessing/blob/main/Screenshot%20from%202020-12-07%2014-45-52.png" width="700" height="500" style=centerme>
+</p>
 
 ### 3. Image Resizing ###
 An image can be resized into our dimensions
