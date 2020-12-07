@@ -29,6 +29,11 @@ def add_noise(img):
     noise_img = np.array(255 * noise_img, dtype='uint8')
     return noise_img
 
+def histogram(img):
+    hist = cv2.calcHist([img], [0], None, [256], [0, 256])
+    plt.imshow(hist)
+    plt.show()
+
 
 def gaussian_filter(img):
     img = add_noise(img)
@@ -49,7 +54,10 @@ def bilateral(img):
 
 
 def canny_edge(img):
-    img
+    canny_edge = cv2.Canny(img, 100, 200)
+    show_multiple_images(img, canny_edge, "Input Image", "Edge Image")
+
+# def segmentation_morphology(img):
 
 
 # img_gray = cv2.resize(img_gray, (350, 350), interpolation=cv2.INTER_AREA)
@@ -59,3 +67,4 @@ def canny_edge(img):
 
 if __name__ == "__main__":
     path_of_image = '/home/renos/Desktop/e-sante/e-sante/100128_d1_front.png'
+    histogram(read_image(path_of_image))
