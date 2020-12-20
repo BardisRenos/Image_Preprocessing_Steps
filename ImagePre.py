@@ -11,8 +11,17 @@ def show_image(img):
 
 def read_image(path):
     img = cv2.imread(path)
-    img_gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+    return img
+
+
+def convert_to_gray(image):
+    img_gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
     return img_gray
+
+
+def resize_image(image, w, h):
+    resized_img = cv2.resize(image, (w, h), interpolation=cv2.INTER_AREA)
+    print(f"The image from {image.shape[:2]} to {resized_img.shape[:2]}")
 
 
 def show_multiple_images(img, img_2, title_1, title_2):
@@ -28,6 +37,14 @@ def add_noise(img):
     noise_img = random_noise(img, mode='s&p', amount=0.3)
     noise_img = np.array(255 * noise_img, dtype='uint8')
     return noise_img
+
+
+def histogram(img):
+    hist = cv2.calcHist(img, [0], None, [256], [0, 256])
+    # plt.imshow(hist)
+    # plt.show()
+    plt.hist(hist.ravel(), 256, [0, 256])
+    plt.show()
 
 
 def gaussian_filter(img):
@@ -49,13 +66,16 @@ def bilateral(img):
 
 
 def canny_edge(img):
-    img
+    canny_edge = cv2.Canny(img, 100, 200)
+    show_multiple_images(img, canny_edge, "Input Image", "Edge Image")
 
 
-# img_gray = cv2.resize(img_gray, (350, 350), interpolation=cv2.INTER_AREA)
-# print(img_gray.shape)
+# def segmentation_morphology(img):
+
 
 # ret, thresh = cv2.threshold(img_gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
 
 if __name__ == "__main__":
     path_of_image = '/home/renos/Desktop/e-sante/e-sante/100128_d1_front.png'
+    resize_image(read_image(path_of_image), 500, 500)
+    # histogram(read_image(path_of_image))
