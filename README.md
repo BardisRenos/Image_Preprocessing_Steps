@@ -145,6 +145,9 @@ def canny_edge(img):
 
 ### 7. Image Gradients ###
 
+An image gradient is a directional change in the intensity or color in an image. The gradient of the image is one of the fundamental building blocks in image processing.
+
+
 ### 8. Contours ###
 
 Contours can be explained simply as a curve that joins all the continuous points (along the boundary), having same color or intensity. The contours are a useful tool for shape analysis and object detection and recognition.
