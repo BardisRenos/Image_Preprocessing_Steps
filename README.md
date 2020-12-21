@@ -147,5 +147,7 @@ def canny_edge(img):
 
 ### 8. Contours ###
 
+Contours can be explained simply as a curve that joins all the continuous points (along the boundary), having same color or intensity. The contours are a useful tool for shape analysis and object detection and recognition.
+
 ### 9. Image Segmentation with Watershed Algorithm ###
 
