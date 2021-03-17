@@ -173,5 +173,16 @@ An image gradient is a directional change in the intensity or color in an image.
 
 Contours can be explained simply as a curve that joins all the continuous points (along the boundary), having same color or intensity. The contours are a useful tool for shape analysis and object detection and recognition.
 
+```python
+def contours_of_image(image, image_gray):
+    thresh = threshold(image_gray)
+    contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+
+    # Draw all contours from the image
+    # The number -1 signifies drawing all contours
+    cv2.drawContours(image, contours, -1, (0, 255, 0), 3)
+    show_image(image)
+```
+
 ### 9. Image Segmentation with Watershed Algorithm ###
 
