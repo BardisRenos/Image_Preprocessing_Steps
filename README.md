@@ -184,5 +184,7 @@ def contours_of_image(image, image_gray):
     show_image(image)
 ```
 
+<img src="https://github.com/BardisRenos/Image_Preprocessing_Steps/blob/main/Figure_1.png" width="300"/> <img src="https://github.com/BardisRenos/Image_Preprocessing_Steps/blob/main/Figure_2.png" width="300"/>
+
 ### 9. Image Segmentation with Watershed Algorithm ###
 
