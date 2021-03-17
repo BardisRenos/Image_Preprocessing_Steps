@@ -5,6 +5,8 @@ from util import *
 # from skimage.util import random_noise
 
 import matplotlib.pyplot as plt
+
+
 #
 # def add_noise(img):
 #     # Adding Gaussian noise
@@ -40,14 +42,16 @@ def histogram(img):
 
 
 def canny_edge(img):
-    canny_edge = cv2.Canny(img, 100, 200)
-    show_2_images(img, canny_edge, "Input Image", "Edge Image")
+    canny_edge_image = cv2.Canny(img, 100, 200)
+    show_2_images(img, canny_edge_image, "Input Image", "Edge Image")
+
+    return canny_edge_image
 
 
 def threshold(img):
-    ret, thresh = cv2.threshold(img, 0, 255, cv2.THRESH_OTSU)
-    # return thresh
-    show_image(thresh)
+    ret, thresh = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+    return thresh
+    # show_image_cv2(thresh)
 
 
 def segmentation_morphology(image, thresh):
@@ -62,13 +66,28 @@ def segmentation_morphology(image, thresh):
     sure_fg = np.uint8(sure_fg)
     unknown = cv2.subtract(sure_bg, sure_fg)
 
-    return unknown
-    # show_multiple_images(image, opening, sure_bg, sure_fg, unknown, 'Original', 'Opening', "sure_bg", "sure_fg",
-    # "The " "difference")
+    show_multiple_images(image, opening, sure_bg, sure_fg, unknown, 'Original', 'Opening', "sure_bg", "sure_fg",
+                         "The difference")
+
+
+def contours_of_image(image, image_gray):
+    thresh = threshold(image_gray)
+    contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+
+    # Draw all contours from the image
+    # The number -1 signifies drawing all contours
+    cv2.drawContours(image, contours, -1, (0, 255, 0), 3)
+    show_image(image)
 
 
 if __name__ == "__main__":
     path_of_image = '/home/renos/Desktop/GitHub Projects/e-sante/e-sante/100119_d5_front.png'
 
-    image = read_image(path=path_of_image)
+    shape_image = '/home/renos/Downloads/star_shape.png'
+
+    image = read_image(path=shape_image)
     show_image(image)
+    image_gray = convert_to_gray(image=image)
+    contours_of_image(image=image, image_gray=image_gray)
+
+    # segmentation_morphology(image=image, thresh=threshold(img=image))
