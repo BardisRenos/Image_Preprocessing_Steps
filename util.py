@@ -1,19 +1,32 @@
 import cv2
 import matplotlib.pyplot as plt
+from image_slicer import slice
 
 
 def show_image(img):
     plt.imshow(img, cmap='gray')
     plt.title("Given Image")
     plt.show()
-    # cv2.imshow("Given Image", img)
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
+
+
+def show_image_cv2(img):
+    cv2.imshow("Given Image", img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
 
 def read_image(path):
     img = cv2.imread(path)
     return img
+
+
+def read_image_with_pyplot(path):
+    img = plt.imread(path)
+    return img
+
+
+def tilled_the_image(img, num_of_pieces):
+    return slice(img, num_of_pieces)
 
 
 def convert_to_gray(image):
