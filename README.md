@@ -137,9 +137,13 @@ def bilateral(img):
 
 ```python
 def canny_edge(img):
-    canny_edge = cv2.Canny(img, 100, 200)
-    show_multiple_images(img, canny_edge, "Input Image", "Edge Image")
+    canny_edge_image = cv2.Canny(img, 100, 200)
+    show_2_images(img, canny_edge_image, "Input Image", "Edge Image")
 ```
+
+<p align="center"> 
+<img src="https://github.com/BardisRenos/Image_Preprocessing_Steps/blob/main/Screenshot%20from%202021-03-17%2015-32-26.png" width="900" height="500" style=centerme>
+</p>
 
 ### 6. Segmentation & Morphology ###
 
